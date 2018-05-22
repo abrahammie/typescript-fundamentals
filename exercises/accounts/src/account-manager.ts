@@ -37,9 +37,7 @@ interface AdminUser extends ConfirmedUser {
    */
   activateNewUser(approver: AdminUser, userToApprove: User): ConfirmedUser {
     if (!approver.adminSince) throw "Approver is not an admin!";
-    let toApprove = userToApprove as ConfirmedUser;
-    toApprove.isActive = true;
-    return toApprove;
+    return {...userToApprove, isActive: true};
   }
 
   /**
@@ -51,8 +49,6 @@ interface AdminUser extends ConfirmedUser {
   promoteToAdmin(existingAdmin: AdminUser, user: ConfirmedUser): AdminUser {
     if (!existingAdmin.adminSince) throw "Not an admin!";
     if (user.isActive !== true) throw "User must be active in order to be promoted to admin!";
-    let newAdmin = user as AdminUser;
-    newAdmin.adminSince = new Date();
-    return newAdmin;
+    return {...user, adminSince: new Date()};
   }
 }
