@@ -6,16 +6,16 @@ import { ReactElement } from 'react';
 
 let hasStudentSolution: boolean = true;
 
-hasStudentSolution =
-  JSON.stringify(renderer.create(<PlaceSearchResult />).toTree()) !==
-  JSON.stringify({
-    nodeType: 'component',
-    props: {},
-    instance: null,
-    rendered: { nodeType: 'host', type: 'div', props: {}, instance: null, rendered: null }
-  });
+// hasStudentSolution =
+//   JSON.stringify(renderer.create(<PlaceSearchResult />).toTree()) !==
+//   JSON.stringify({
+//     nodeType: 'component',
+//     props: {},
+//     instance: null,
+//     rendered: { nodeType: 'host', type: 'div', props: {}, instance: null, rendered: null }
+//   });
 
-if (hasStudentSolution) {
+// if (hasStudentSolution) {
   it('renders correctly if place is missing a website', () => {
     let pd: PlaceDetails = {
       id: 'e3290ca5b95282e14c0b14f98666ff7886efa359',
@@ -42,10 +42,10 @@ if (hasStudentSolution) {
     const tree = renderer.create(<PlaceSearchResult {...pd} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-} else {
-  describe('Instructions', () => {
-    test('Please implement the "autocomplete-sfc/src/place-search-result.tsx" component', () => {
-      expect(true).toBeTruthy();
-    });
-  });
-}
+// } else {
+//   describe('Instructions', () => {
+//     test('Please implement the "autocomplete-sfc/src/place-search-result.tsx" component', () => {
+//       expect(true).toBeTruthy();
+//     });
+//   });
+// }
