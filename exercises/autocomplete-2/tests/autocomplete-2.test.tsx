@@ -5,11 +5,11 @@ import { PlaceDetails } from '../src/utils/places';
 
 let hasStudentSolution: boolean = true;
 
-hasStudentSolution =
-  JSON.stringify(renderer.create(<PlaceSearchResultList />).toJSON()) !==
-  JSON.stringify({ type: 'pre', props: {}, children: ['{"0":{},"1":{}}'] });
+// hasStudentSolution =
+//   JSON.stringify(renderer.create(<PlaceSearchResultList />).toJSON()) !==
+//   JSON.stringify({ type: 'pre', props: {}, children: ['{"0":{},"1":{}}'] });
 
-if (hasStudentSolution) {
+// if (hasStudentSolution) {
   it('PlaceSearchResultList renders correctly for "in progress" state', () => {
     const tree = renderer
       .create(<PlaceSearchResultList inProgress={true} term={'xylophone'} results={[] as PlaceDetails[]} />)
@@ -38,10 +38,10 @@ if (hasStudentSolution) {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-} else {
-  describe('Instructions', () => {
-    test('Please implement the "autocomplete-2/src/place-search-result-list.tsx" component', () => {
-      expect(true).toBeTruthy();
-    });
-  });
-}
+// } else {
+//   describe('Instructions', () => {
+//     test('Please implement the "autocomplete-2/src/place-search-result-list.tsx" component', () => {
+//       expect(true).toBeTruthy();
+//     });
+//   });
+// }
