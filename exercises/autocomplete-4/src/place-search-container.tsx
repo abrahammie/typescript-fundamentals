@@ -13,7 +13,7 @@ interface IPlaceSearchContainerState {
 
 export class PlaceSearchContainer extends React.Component<{}, IPlaceSearchContainerState> {
   constructor() {
-    super();
+    super({});
     this.state = {
       term: '',
       results: [], // List of search results
